@@ -1,15 +1,20 @@
-import NavBar from './components/NavBar/FreeNav'
-import ItemList from './components/itemListContainer/itemListContainer';
+import { Routes, Route } from 'react-router-dom';
+import ItemListContainer from './components/itemList/itemListContainer';
+import ItemDetailContainer from './components/itemDetail/itemDetailContainer';
+import Navbar from './components/navbar/navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div>
-      {}
-      <NavBar/>
-      {}
-      <ItemList saludo='Hola, que hace?'/>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<ItemListContainer/>}/>
+        <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
+        <Route path='/item/:Id' element={<ItemDetailContainer/>}/>
+      </Routes>
     </div>
   );
 };
 
-export default App;
+export default App
