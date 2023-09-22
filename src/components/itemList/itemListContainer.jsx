@@ -14,5 +14,4 @@ const ItemListContainer = () => {
     },[categoryId]);
     return <div><ItemList items={items}/></div>
 };
-
 export default ItemListContainer;

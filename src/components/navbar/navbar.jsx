@@ -1,26 +1,57 @@
 import { Link, NavLink } from 'react-router-dom';
 import CartWidget from '../cartWidget/cartWidget';
+import ColorLogo from '../../images/logo/CoLab-Color.svg'
 
 const Navbar = () => {
     return (
         <div>
-            <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
-                <div className='container-lg'>
-                {}
-                <Link to ='/' className='navbar-brand'>Nanazon</Link>
-                {}
-                <ul className='navbar-nav me-auto'>
-                    <li className='nav-item'>
-                        <NavLink to ='/category/computer' className='nav-link'>Ordenadores</NavLink>
-                    </li>
-                    <li className='nav-item'>
-                        <NavLink to ='/category/tablet' className='nav-link'>Tablets</NavLink>
-                    </li>
-                    <li className='nav-item'>
-                        <NavLink to ='/category/laptop' className='nav-link'>Laptops</NavLink>
-                    </li>
-                </ul>
-                    <CartWidget/>
+            <nav className='bg-gray-800'>
+                <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+                    <div className="relative flex h-16 items-center justify-between">
+                        <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                            <button  data-collapse-toggle="navbar-multi-level" type="button" className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="navbar-multi-level" aria-expanded="false">
+                                <span className="absolute -inset-0.5"></span>
+                                <span className="sr-only">Open main menu</span>
+                                <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                                </svg>
+                                <svg className="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                            <div className="flex flex-shrink-0 items-center">
+                                <Link to="/"><img className="h-16 w-auto" src={ColorLogo} alt="CoLab"/></Link>
+                            </div>
+                            <div className="hidden sm:ml-6 sm:block">
+                                <div className="flex mt-3 space-x-4">
+                                    {}
+                                    <NavLink to="/category/computer" className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Ordenadores</NavLink>
+                                    <NavLink to="/category/tablet" className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Tablets</NavLink>
+                                    <NavLink to="/category/laptop" className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Laptops</NavLink>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="absolute inset-y-0 right-0 flex items-center pr-14 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                            <button type="button" className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                                <span className="absolute -inset-1.5"></span>
+                                <span className="sr-only">View notifications</span>
+                                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                                </svg>
+                            </button>
+                        </div>
+                        <CartWidget/>
+                    </div>
+                </div>
+                <div className="sm:hidden" id="navbar-multi-level">
+                    <div className="space-y-1 px-2 pb-3 pt-2">
+                        <Link to="/" className="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">CoLab</Link>
+                        <NavLink to="/category/computer" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Ordenadores</NavLink>
+                        <NavLink to="/category/tablet" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Tablets</NavLink>
+                        <NavLink to="/category/laptop" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Laptops</NavLink>
+                    </div>
                 </div>
             </nav>
         </div>
